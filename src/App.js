@@ -1,26 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div>
+      <header>
+        <h1>Random Recipe generator</h1>
       </header>
+        <button>Show me a recipe</button>
+      <article>
+        <img src="" title="recipe image" alt="recipe"/>
+        <h3>Recipe Title</h3>
+        <p>Prep time: time here</p>
+        <p>summary here</p>
+        <p>Source: <a href="#">source here</a></p>
+        <p>List of cuisines here</p>
+        <a href="#">View recipe</a>
+      </article> 
+      <footer>
+        <p>Recipes powered by <a href="https://spoonacular.com/food-api/">spoonacular API</a></p>
+      </footer>
     </div>
-  );
-}
+  )
+};
 
 export default App;
