@@ -32,15 +32,13 @@ const App = () => {
       <header>
         <h1>Random Recipe generator</h1>
       </header>
-      <button>Show me another recipe</button>
       <article>
-        <img src="" title="recipe image" alt="recipe"/>
-        <h3>Recipe title</h3>
-        <p>Prep time: time here</p>
-        <p>summary here</p>
-        <p>Source: <a href="#">source here</a></p>
-        <p>List of cuisines here</p>
-        <a href="#">View recipe</a>
+        <img src={recipe.image} title={recipe.title} alt={recipe.title}/>
+        <h3>{recipe.title}</h3>
+        <p>Prep time: {recipe.readyInMinutes} minutes</p>
+        <p>{recipe.summary}</p>
+        <p>Source: <a href={recipe.sourceUrl}>{recipe.sourceName}</a></p>
+        <a href={recipe.sourceUrl}>View recipe</a>
       </article> 
       <footer>
         <p>Recipes powered by <a href="https://spoonacular.com/food-api/">spoonacular API</a></p>
