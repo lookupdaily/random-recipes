@@ -40,3 +40,4 @@ You will also see any lint errors in the console.
 - User can click a link to view the recipe in a new window
 - User can click to see another recipe
 - Bonus: user can change the number of recipes they want to see
+- Bonus: no recipes visible until user clicks button first
