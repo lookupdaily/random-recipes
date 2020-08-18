@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
+import { Recipe } from 'recipe';
 
 const App = () => {
-  const [recipe, setRecipe] = useState({})
-  const [error, setError] = useState(null)
+  const [recipe, setRecipe] = useState({});
+  const [error, setError] = useState(null);
 
   async function fetchRecipe() {
-    const apiKey = process.env.REACT_APP_SPOONACULAR_API_KEY
+    const apiKey = process.env.REACT_APP_SPOONACULAR_API_KEY;
     fetch(`https://api.spoonacular.com/recipes/random?apiKey=${apiKey}&number=1`)
       .then(res => res.json())
       .then(
@@ -18,11 +19,11 @@ const App = () => {
          }
       )
       .catch(error => setError(error))
-  }
+  };
 
   useEffect(()=> {
-    fetchRecipe()
-  },[])
+    fetchRecipe();
+  },[]);
 
   if(error) {
     return <div>Error: {error.message}</div>
@@ -32,19 +33,12 @@ const App = () => {
       <header>
         <h1>Random Recipe generator</h1>
       </header>
-      <article>
-        <img src={recipe.image} title={recipe.title} alt={recipe.title}/>
-        <h3>{recipe.title}</h3>
-        <p>Prep time: {recipe.readyInMinutes} minutes</p>
-        <p>{recipe.summary}</p>
-        <p>Source: <a href={recipe.sourceUrl}>{recipe.sourceName}</a></p>
-        <a href={recipe.sourceUrl}>View recipe</a>
-      </article> 
+       <RecipeCard recipe={recipe}/>
       <footer>
         <p>Recipes powered by <a href="https://spoonacular.com/food-api/">spoonacular API</a></p>
       </footer>
     </div>
-  )
+  );
 };
 
 export default App;
