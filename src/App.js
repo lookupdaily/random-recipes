@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Recipe } from 'recipe';
+import { RecipeCard } from './components/RecipeCard';
+import { ErrorHandler } from './components/ErrorHandler'
 
 const App = () => {
   const [recipe, setRecipe] = useState({});
@@ -24,16 +25,15 @@ const App = () => {
   useEffect(()=> {
     fetchRecipe();
   },[]);
-
-  if(error) {
-    return <div>Error: {error.message}</div>
-  }
+  
   return (
     <div>
       <header>
         <h1>Random Recipe generator</h1>
       </header>
-       <RecipeCard recipe={recipe}/>
+      <ErrorHandler error={error}/>
+      <RecipeCard recipe={recipe}/>
+      <button onClick={fetchRecipe}>Next recipe</button>
       <footer>
         <p>Recipes powered by <a href="https://spoonacular.com/food-api/">spoonacular API</a></p>
       </footer>
