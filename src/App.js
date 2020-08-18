@@ -6,7 +6,7 @@ const App = () => {
       <header>
         <h1>Random Recipe generator</h1>
       </header>
-        <button>Show me a recipe</button>
+      <button>Show me another recipe</button>
       <article>
         <img src="" title="recipe image" alt="recipe"/>
         <h3>Recipe Title</h3>
